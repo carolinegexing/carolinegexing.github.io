@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xing Ge | Profile</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --text: #181818;
+      --muted: #6b6b6b;
+      --line: #e7e7e2;
+      --accent: #1f1f1f;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(247, 247, 245, 0.82);
+      border-bottom: 1px solid rgba(231, 231, 226, 0.85);
+      z-index: 10;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 92px 0 64px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .hero p.lead {
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 24px 0 0;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 28px;
+    }
+
+    .hero-card h2,
+    .section h2 {
+      margin: 0 0 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .meta-item {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .meta-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    main {
+      padding-bottom: 80px;
+    }
+
+    .section {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 40px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 260px;
+    }
+
+    .content p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 22px;
+      min-height: 180px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      font-size: 0.92rem;
+      color: #2d2d2d;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline-period {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .two-col,
+      .timeline-item,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+
+      .section-intro {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand">Xing Ge</a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Online Business & Marketing</span>
+        <h1>Xing Ge</h1>
+        <p class="lead">
+          Master’s graduate in Online Business and Marketing with hands-on experience across digital marketing,
+          premium retail, e-commerce operations, and brand communication. I bring together a strategic marketing mindset,
+          strong execution, and a customer-first understanding shaped by both academic research and real business practice.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <h2>Profile Snapshot</h2>
+        <div class="meta-list">
+          <div class="meta-item">
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Digital Marketing, Brand Communication, E-commerce</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Based in</span>
+            <span class="meta-value">Switzerland</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Background</span>
+            <span class="meta-value">Luxury Retail, Digital Business, Marketing Strategy</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Languages</span>
+            <span class="meta-value">Mandarin, English, beginner German</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section two-col">
+      <div>
+        <h2>About</h2>
+        <p class="section-intro">A concise introduction to my professional profile, strengths, and working style.</p>
+      </div>
+      <div class="content">
+        <p>
+          My work sits at the intersection of strategy and execution. I enjoy turning ideas into something tangible:
+          a clearer message, a better customer journey, a stronger brand presence, or a more organised digital process.
+        </p>
+        <p>
+          Through my academic background in online business and marketing, I developed a strong foundation in digital strategy,
+          consumer behaviour, content marketing, and research. At the same time, my experience in luxury retail and second-hand
+          fashion gave me a practical understanding of customers, storytelling, service quality, and how brand perception is built in everyday interactions.
+        </p>
+        <p>
+          I am especially strong in environments where attention to detail, adaptability, and thoughtful communication matter.
+          I bring a calm, structured way of working, but I also enjoy creative problem-solving and finding ways to make marketing more effective and more human.
+        </p>
+      </div>
+    </section>
+
+    <section id="expertise" class="section two-col">
+      <div>
+        <h2>Expertise</h2>
+        <p class="section-intro">Core strengths developed through academic work, digital projects, and customer-facing roles.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Digital Marketing & Content</h3>
+          <p>
+            Content creation, campaign coordination, social media communication, brand storytelling, newsletter support,
+            and clear messaging tailored to audience needs.
+          </p>
+        </article>
+        <article class="card">
+          <h3>E-commerce Operations</h3>
+          <p>
+            Website management, product listing, merchandising support, customer journey improvements, and practical work with online shop systems and digital touchpoints.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Customer & Brand Understanding</h3>
+          <p>
+            Strong sensitivity for premium positioning, customer expectations, service excellence, and the details that shape trust and brand experience.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Research & Strategic Thinking</h3>
+          <p>
+            Experience in academic research, qualitative analysis, consumer insight generation, and translating findings into practical marketing recommendations.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Tools & Skills</h2>
+        <p class="section-intro">Selected tools and working capabilities I use across digital and marketing-related tasks.</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Squarespace</span>
+        <span class="tag">Canva</span>
+        <span class="tag">CapCut</span>
+        <span class="tag">Google Analytics</span>
+        <span class="tag">Meta Business Suite</span>
+        <span class="tag">Content Writing</span>
+        <span class="tag">Brand Communication</span>
+        <span class="tag">Campaign Support</span>
+        <span class="tag">E-commerce Coordination</span>
+        <span class="tag">Consumer Research</span>
+        <span class="tag">Qualitative Analysis</span>
+        <span class="tag">Cross-functional Collaboration</span>
+      </div>
+    </section>
+
+    <section id="experience" class="section two-col">
+      <div>
+        <h2>Experience</h2>
+        <p class="section-intro">A snapshot of the environments and roles that have shaped my professional perspective.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">Recent</div>
+          <div>
+            <h3>Store & Digital Marketing Manager · Abito Allora</h3>
+            <p>
+              Supporting both store operations and digital marketing for a luxury second-hand boutique in Zurich, with responsibilities across website management,
+              product presentation, campaign execution, and online brand communication.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Previous</div>
+          <div>
+            <h3>Luxury Fashion Retail Experience</h3>
+            <p>
+              Background in premium retail environments, combining client service, product knowledge, in-store coordination,
+              and a strong eye for presentation, quality, and relationship building.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Ongoing</div>
+          <div>
+            <h3>Academic & Applied Marketing Projects</h3>
+            <p>
+              Developed research-based and practical projects in digital business, content marketing, consumer behaviour,
+              and strategic marketing, including thesis work focused on Gen Z and digital fashion communication.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section two-col">
+      <div>
+        <h2>Education</h2>
+        <p class="section-intro">Academic foundation with a strong interest in turning theory into practical business value.</p>
+      </div>
+      <div class="content">
+        <p>
+          <strong>Master’s Degree in Online Business and Marketing</strong><br />
+          Lucerne University of Applied Sciences and Arts (HSLU)
+        </p>
+        <p>
+          My academic work focused on digital marketing, online business models, consumer insight, and strategy.
+          A key area of my research explored how Generation Z perceives relevance, creativity, authenticity, and trust in digital fashion advertising.
+        </p>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Working Style</h2>
+        <p class="section-intro">How I approach collaboration, communication, and execution in professional settings.</p>
+      </div>
+      <div class="content">
+        <p>
+          I am thoughtful, reliable, and detail-oriented. I care about clarity, consistency, and delivering work that feels both well-structured and well-considered.
+        </p>
+        <p>
+          I work best in teams that value ownership, communication, and continuous improvement. I am comfortable supporting operations, managing details, and contributing ideas,
+          especially in roles where marketing, customer experience, and brand presentation come together.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Professional profile page for Xing Ge.
+    </div>
+  </footer>
+</body>
+</html>
