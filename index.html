@@ -73,6 +73,32 @@
       color: var(--muted);
     }
 
+    .shortcut {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 11px 16px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .shortcut:hover {
+      transform: translateY(-1px);
+      border-color: #cfcfc8;
+      background: #fbfbfa;
+    }
+
+    .shortcut-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
     .hero {
       padding: 92px 0 64px;
       display: grid;
@@ -181,6 +207,336 @@
       gap: 18px;
     }
 
+    .case-study {
+      display: grid;
+      gap: 28px;
+    }
+
+    .case-study-header {
+      display: grid;
+      gap: 18px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #f3f1eb 0%, #ffffff 100%);
+    }
+
+    .case-study-header h3 {
+      margin: 0;
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .case-subtitle {
+      margin: 0;
+      font-size: 1.18rem;
+      color: var(--text);
+      max-width: 760px;
+    }
+
+    .case-intro {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .case-meta span,
+    .snapshot .card,
+    .case-panel,
+    .subsection,
+    .results-cards .card,
+    .case-final {
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .case-meta span {
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .case-meta strong {
+      color: var(--text);
+    }
+
+    .snapshot,
+    .results-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .snapshot .card,
+    .results-cards .card {
+      min-height: auto;
+    }
+
+    .snapshot .card h3,
+    .results-cards .card h3 {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .snapshot .card p,
+    .results-cards .card p {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .case-panel,
+    .subsection,
+    .case-final {
+      padding: 28px;
+    }
+
+    .case-panel h3,
+    .subsection h3,
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+    }
+
+    .case-panel p,
+    .subsection p,
+    .case-final p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .case-panel ul,
+    .subsection ul,
+    .case-next ul,
+    .case-learnings ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      display: grid;
+      gap: 8px;
+    }
+
+    .subsection + .subsection {
+      margin-top: 18px;
+    }
+
+    .focus-note {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .footer-note {
+      margin: 0;
+      font-style: italic;
+      color: #555;
+    }
+
+    .case-image-block {
+      margin-top: 24px;
+    }
+
+    .case-image-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .case-image-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #f5f5f5;
+    }
+
+    .case-image-caption {
+      padding: 16px 18px;
+    }
+
+    .case-image-caption h4 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .case-image-caption p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .case-two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .case-image-frame-landscape {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .case-image-frame-portrait {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .case-image-frame-wide {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .visual-block {
+      margin-top: 28px;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .visual-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .visual-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: #f3f3f3;
+    }
+
+    .visual-card-content {
+      padding: 16px;
+    }
+
+    .visual-card h4 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .visual-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .span-6 {
+      grid-column: span 6;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-8 {
+      grid-column: span 8;
+    }
+
+    .span-12 {
+      grid-column: span 12;
+    }
+
+    .image-frame {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .image-frame.tall {
+      aspect-ratio: 4 / 5;
+    }
+
+    .image-frame.mobile {
+      aspect-ratio: 9 / 16;
+    }
+
+    .placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 14px;
+      background: linear-gradient(135deg, #f7f7f7, #efefef);
+    }
+
+    .journey-wrapper {
+      margin-top: 24px;
+      padding: 28px;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 16px;
+    }
+
+    .journey-title {
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .journey-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .journey-step {
+      padding: 14px 18px;
+      background: #fafafa;
+      border: 1px solid #e9e9e9;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #222;
+      white-space: nowrap;
+    }
+
+    .journey-arrow {
+      font-size: 18px;
+      color: #999;
+    }
+
+    .journey-note {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #777;
+    }
+
     .card {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -259,8 +615,18 @@
       .hero,
       .two-col,
       .timeline-item,
-      .grid {
+      .grid,
+      .case-meta,
+      .snapshot,
+      .results-cards {
         grid-template-columns: 1fr;
+      }
+
+      .span-6,
+      .span-4,
+      .span-8,
+      .span-12 {
+        grid-column: span 12;
       }
 
       .nav {
@@ -274,6 +640,27 @@
       .section-intro {
         max-width: none;
       }
+
+      .case-study-header,
+      .case-panel,
+      .subsection,
+      .case-final {
+        padding: 22px;
+      }
+
+      .case-two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-flow {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .journey-arrow {
+        transform: rotate(90deg);
+        margin-left: 10px;
+      }
     }
   </style>
 </head>
@@ -284,6 +671,7 @@
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
+        <a href="#marketing-campaign">Campaign</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
       </nav>
@@ -300,6 +688,9 @@
           premium retail, e-commerce operations, and brand communication. I bring together a strategic marketing mindset,
           strong execution, and a customer-first understanding shaped by both academic research and real business practice.
         </p>
+        <div class="shortcut-group">
+          <a class="shortcut" href="#marketing-campaign">Jump to Marketing Campaign</a>
+        </div>
       </div>
 
       <aside class="hero-card">
@@ -323,6 +714,268 @@
           </div>
         </div>
       </aside>
+    </section>
+
+    <section id="marketing-campaign" class="section two-col">
+      <div>
+        <h2>Marketing Campaign</h2>
+        <p class="section-intro">A clean case study showing how strategy, content, and digital touchpoints worked together around one boutique brand.</p>
+      </div>
+      <div class="case-study">
+        <div class="case-study-header">
+          <span class="section-label">Case Study</span>
+          <h3>Abito Allora</h3>
+          <p class="case-subtitle">Turning a boutique into a more connected digital experience</p>
+          <p class="case-intro">
+            A Zurich-based second-hand luxury boutique case study focused on e-commerce optimisation, trust-building,
+            integrated campaigns, and customer journey design.
+          </p>
+          <div class="case-meta">
+            <span><strong>Role:</strong> Store & Digital Marketing Manager</span>
+            <span><strong>Scope:</strong> Website, Campaigns, Content, Analytics</span>
+            <span><strong>Tools:</strong> Squarespace, Instagram, Meta Business Suite, Email Marketing</span>
+          </div>
+        </div>
+
+        <div class="snapshot">
+          <div class="card">
+            <h3>Business</h3>
+            <p>Second-hand luxury boutique in Zurich</p>
+          </div>
+          <div class="card">
+            <h3>Challenge</h3>
+            <p>Trust barriers, fragmented journey, one-of-a-kind inventory</p>
+          </div>
+          <div class="card">
+            <h3>Role</h3>
+            <p>Store & Digital Marketing Manager</p>
+          </div>
+          <div class="card">
+            <h3>Scope</h3>
+            <p>Website, campaigns, content, analytics</p>
+          </div>
+        </div>
+
+        <div class="case-panel">
+          <h3 class="section-title">The Challenge</h3>
+          <p>
+            Abito Allora operates in a non-standardised e-commerce environment where each item is unique.
+            Unlike traditional retail, customers require a higher level of trust, clarity, and reassurance
+            before making a purchase or consigning items.
+          </p>
+          <ul>
+            <li>Non-scalable, one-of-a-kind inventory</li>
+            <li>Trust barriers around authenticity, condition, and pricing</li>
+            <li>Disconnected online and offline customer experience</li>
+            <li>Limited marketing resources requiring high-impact execution</li>
+          </ul>
+        </div>
+
+        <div class="case-panel">
+          <h3 class="section-title">My Approach</h3>
+
+          <div class="subsection">
+            <h3>1. E-commerce & Website Transformation</h3>
+            <p>
+              I led a full optimisation of the Squarespace website to improve usability, trust, and accessibility
+              across both desktop and mobile experiences.
+            </p>
+            <ul>
+              <li>Redesigned layout for mobile and desktop usability</li>
+              <li>Introduced multilingual functionality and user login features</li>
+              <li>Optimised landing page navigation and product discoverability</li>
+              <li>Developed "Who we are" and brand positioning to build trust</li>
+              <li>Created transparent "Sell with us" journey with pricing clarity</li>
+              <li>Implemented SEO improvements to enhance discoverability</li>
+            </ul>
+            <p class="focus-note">
+              Focus: reducing uncertainty and building trust through clarity and transparency
+            </p>
+
+            <div class="case-image-block">
+              <span class="section-label">Website Visuals</span>
+              <div class="case-two-column">
+                <div class="case-image-card">
+                  <div class="case-image-frame-wide">
+                    <img src="assets/case-study/abito-homepage.png" alt="Abito Allora homepage redesign screenshot" />
+                  </div>
+                  <div class="case-image-caption">
+                    <h4>Homepage redesign</h4>
+                    <p>Updated navigation, cleaner visual hierarchy, and a stronger premium brand presentation on desktop.</p>
+                  </div>
+                </div>
+                <div class="case-image-card">
+                  <div class="case-image-frame-wide">
+                    <img src="assets/case-study/abito-sell-process.png" alt="Abito Allora sell with us process screenshot" />
+                  </div>
+                  <div class="case-image-caption">
+                    <h4>Sell with us journey</h4>
+                    <p>Clear pricing, step-by-step process explanation, and stronger reassurance for consignors.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>2. Campaign & Content Execution (Christmas Campaign)</h3>
+            <p>
+              I designed and executed a daily Advent Calendar campaign across Instagram and Facebook,
+              aligned with customer behaviour and seasonal engagement patterns.
+            </p>
+            <ul>
+              <li>Created daily interactive Stories, Reels, and campaign content</li>
+              <li>Analysed engagement and reach to optimise content performance</li>
+              <li>Connected campaign across website, newsletter, social, and in-store</li>
+              <li>Ensured consistent messaging across all touchpoints</li>
+              <li>Created in-store content to loop engagement back to digital</li>
+            </ul>
+            <p class="focus-note">
+              Focus: building continuous engagement loops rather than one-time campaigns
+            </p>
+
+            <div class="case-image-block">
+              <span class="section-label">Christmas Campaign</span>
+              <div class="case-image-card">
+                <div class="case-image-frame-portrait">
+                  <img src="images/christmas-campaign-collage.jpg" alt="Christmas campaign collage for Abito Allora" />
+                </div>
+                <div class="case-image-caption">
+                  <h4>Christmas Campaign Execution</h4>
+                  <p>
+                    I designed and executed a daily Advent Calendar campaign across Instagram and Facebook, supported by in-store communication and digital storytelling to create repeated engagement throughout the festive period.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Newsletter as a Supporting Traffic Channel</h3>
+            <p>
+              The newsletter supported the campaign by driving attention toward social and website touchpoints,
+              helping connect channels rather than acting as a standalone destination.
+            </p>
+
+            <div class="case-image-block">
+              <div class="case-image-card">
+                <div class="case-image-frame-portrait">
+                  <img src="images/newsletter-screenshot.jpg" alt="Newsletter screenshot from Abito Allora Christmas campaign" />
+                </div>
+                <div class="case-image-caption">
+                  <h4>Newsletter as a Supporting Traffic Channel</h4>
+                  <p>
+                    The newsletter supported the campaign by driving attention toward social and website touchpoints, helping connect channels rather than acting as a standalone destination.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>3. Customer Journey Design</h3>
+            <p>
+              I shifted the marketing approach from isolated actions to a more connected system,
+              linking digital and physical touchpoints to reinforce familiarity, trust, and repeated engagement over time.
+            </p>
+            <ul>
+              <li>Linked email, website, Instagram, Facebook, and in-store communication into one connected flow</li>
+              <li>Aligned messaging across platforms to create a more consistent customer experience</li>
+              <li>Used repeated exposure rather than one-time interaction to support engagement</li>
+            </ul>
+
+            <div class="case-image-block">
+              <div class="case-image-card">
+                <div class="case-image-caption">
+                  <h4>Cross-Channel Customer Journey</h4>
+                  <p style="margin-bottom: 14px;">
+                    Newsletter → Website → Instagram / Facebook → In-Store Experience → Back to Digital Engagement
+                  </p>
+                  <p>
+                    Rather than treating each channel separately, I used them as connected touchpoints: email introduced the campaign, the website supported validation, social drove daily interaction, and in-store activity reinforced the overall experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>4. Analytics & Behavioural Insights</h3>
+            <p>
+              I used cross-platform data to understand user behaviour and guide optimisation decisions.
+            </p>
+            <ul>
+              <li>Instagram and Meta Business Suite: engagement and reach</li>
+              <li>Squarespace analytics: traffic and behaviour</li>
+              <li>Newsletter performance: CTR and interaction</li>
+              <li>Traffic sources: Direct vs Google</li>
+            </ul>
+            <p class="focus-note">
+              Focus: using behavioural data to inform decisions rather than assumptions
+            </p>
+          </div>
+        </div>
+
+        <div class="case-panel results">
+          <h3 class="section-title">Results & Impact</h3>
+          <div class="results-cards">
+            <div class="card">
+              <h3>Email</h3>
+              <p>60% open rate<br />5% CTR<br />~500 recipients</p>
+            </div>
+            <div class="card">
+              <h3>Website</h3>
+              <p>+29% new users<br />1.8K visits<br />70% mobile users</p>
+            </div>
+            <div class="card">
+              <h3>SEO</h3>
+              <p>+43% clicks<br />33K impressions<br />Avg position 12</p>
+            </div>
+            <div class="card">
+              <h3>Social</h3>
+              <p>123K views<br />+37% reach<br />+41 followers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-panel">
+          <h3 class="section-title">Insights from Data</h3>
+          <ul>
+            <li>Email acted as a bridge to social platforms rather than a conversion endpoint</li>
+            <li>The website functioned as a validation tool rather than a browsing destination</li>
+            <li>Mobile-first behaviour dominated user interaction</li>
+            <li>Instagram Stories drove the highest engagement at 73.8%</li>
+            <li>SEO improved discovery, but CTR optimisation remains an opportunity</li>
+          </ul>
+        </div>
+
+        <div class="case-panel case-learnings">
+          <h3 class="section-title">Key Learnings</h3>
+          <ul>
+            <li>Trust is built through clarity, detail, and transparency</li>
+            <li>Consistency across touchpoints strengthens engagement</li>
+            <li>Customer journeys are non-linear and require repeated exposure</li>
+            <li>Small structural improvements can significantly impact user experience</li>
+          </ul>
+        </div>
+
+        <div class="case-panel case-next">
+          <h3 class="section-title">What I Would Do Next</h3>
+          <ul>
+            <li>Strengthen cross-channel tracking and attribution</li>
+            <li>Develop repeatable content frameworks</li>
+            <li>Expand SEO strategy for non-brand keywords</li>
+            <li>Enhance trust signals with reviews and authentication storytelling</li>
+          </ul>
+        </div>
+
+        <div class="case-final">
+          <p class="footer-note">
+            This project shaped how I approach marketing today, not as isolated outputs,
+            but as a connected system where trust, clarity, and repeated interaction drive behaviour.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="about" class="section two-col">
