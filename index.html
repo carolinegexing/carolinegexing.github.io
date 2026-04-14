@@ -114,6 +114,17 @@
       box-shadow: 0 10px 24px rgba(89, 67, 48, 0.08);
     }
 
+    .shortcut-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      display: block;
+    }
+
+    .shortcut-linkedin {
+      background: rgba(247, 239, 229, 0.96);
+    }
+
     .shortcut-group {
       display: flex;
       flex-wrap: wrap;
@@ -141,7 +152,7 @@
     }
 
     .hero-photo {
-      width: 140px;
+      width: 168px;
       aspect-ratio: 1;
       border-radius: 50%;
       overflow: hidden;
@@ -217,7 +228,7 @@
     .hero-card h2,
     .section h2 {
       margin: 0 0 18px;
-      font-size: 1rem;
+      font-size: 1.18rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -307,6 +318,52 @@
       max-width: 720px;
     }
 
+    .section-personal {
+      --section-bg: linear-gradient(180deg, rgba(252, 248, 242, 0.98) 0%, rgba(245, 237, 226, 0.98) 100%);
+      border-color: rgba(90, 67, 48, 0.22);
+      box-shadow: 0 18px 38px rgba(89, 67, 48, 0.1);
+      position: relative;
+    }
+
+    .section-personal::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: clamp(24px, 4vw, 40px);
+      right: clamp(24px, 4vw, 40px);
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(90, 67, 48, 0.82), rgba(175, 151, 123, 0.46));
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #7f6852;
+      font-weight: 700;
+    }
+
+    .section-personal h2 {
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+    }
+
+    .section-personal .section-intro {
+      color: #665545;
+      font-size: 1.02rem;
+      max-width: 360px;
+    }
+
+    .section-personal .content {
+      padding: 24px 28px;
+      border: 1px solid rgba(90, 67, 48, 0.12);
+      border-radius: 22px;
+      background: rgba(255, 252, 247, 0.72);
+    }
+
     .content p {
       margin: 0 0 14px;
       font-size: 1rem;
@@ -334,9 +391,9 @@
 
     .case-study-header h3 {
       margin: 0;
-      font-size: clamp(2.1rem, 4vw, 3.6rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
       font-family: var(--heading-font);
     }
 
@@ -411,6 +468,21 @@
     .subsection,
     .case-final {
       padding: 28px;
+    }
+
+    .case-panel.results {
+      background: linear-gradient(145deg, rgba(249, 242, 233, 0.96) 0%, rgba(239, 227, 211, 0.96) 100%);
+      border-color: rgba(90, 67, 48, 0.28);
+      box-shadow: 0 14px 30px rgba(89, 67, 48, 0.08);
+    }
+
+    .case-panel.results .section-title {
+      font-size: 1.45rem;
+    }
+
+    .case-panel.results .card {
+      background: rgba(255, 252, 248, 0.82);
+      border-color: rgba(90, 67, 48, 0.16);
     }
 
     .case-panel h3,
@@ -808,7 +880,7 @@
       }
 
       .hero-photo {
-        width: 112px;
+        width: 134px;
         margin-bottom: 22px;
       }
 
@@ -848,7 +920,15 @@
         </p>
         <p class="legal-note"><em>As a recent Master’s graduate in Switzerland, I am eligible to work under Art. 21 para. 3 FNIA.</em></p>
         <div class="shortcut-group">
-          <a class="shortcut" href="#marketing-campaign">Jump to Marketing Campaign</a>
+          <a class="shortcut shortcut-linkedin" href="https://www.linkedin.com/in/xing-ge-494a9a179/" target="_blank" rel="noreferrer">
+            <svg class="shortcut-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="#dbc7af"></rect>
+              <circle cx="8" cy="8" r="1.35" fill="#5a4330"></circle>
+              <rect x="6.7" y="10.1" width="2.6" height="7.2" rx="1.2" fill="#5a4330"></rect>
+              <path d="M11 10.1h2.5v1c.6-.8 1.5-1.2 2.7-1.2 2 0 3.3 1.3 3.3 4v3.4H17v-3.1c0-1.1-.5-1.8-1.5-1.8-1.1 0-1.8.8-1.8 2v2.9H11z" fill="#5a4330"></path>
+            </svg>
+            LinkedIn
+          </a>
         </div>
       </div>
 
@@ -928,6 +1008,28 @@
             <li>Disconnected online and offline customer experience</li>
             <li>Limited marketing resources requiring high-impact execution</li>
           </ul>
+        </div>
+
+        <div class="case-panel results">
+          <h3 class="section-title">Results & Impact</h3>
+          <div class="results-cards">
+            <div class="card">
+              <h3>Email</h3>
+              <p>60% open rate<br />5% CTR<br />~500 recipients</p>
+            </div>
+            <div class="card">
+              <h3>Website</h3>
+              <p>+29% new users<br />1.8K visits<br />70% mobile users</p>
+            </div>
+            <div class="card">
+              <h3>SEO</h3>
+              <p>+43% clicks<br />33K impressions<br />Avg position 12</p>
+            </div>
+            <div class="card">
+              <h3>Social</h3>
+              <p>123K views<br />+37% reach<br />+41 followers</p>
+            </div>
+          </div>
         </div>
 
         <div class="case-panel">
@@ -1075,28 +1177,6 @@
           </div>
         </div>
 
-        <div class="case-panel results">
-          <h3 class="section-title">Results & Impact</h3>
-          <div class="results-cards">
-            <div class="card">
-              <h3>Email</h3>
-              <p>60% open rate<br />5% CTR<br />~500 recipients</p>
-            </div>
-            <div class="card">
-              <h3>Website</h3>
-              <p>+29% new users<br />1.8K visits<br />70% mobile users</p>
-            </div>
-            <div class="card">
-              <h3>SEO</h3>
-              <p>+43% clicks<br />33K impressions<br />Avg position 12</p>
-            </div>
-            <div class="card">
-              <h3>Social</h3>
-              <p>123K views<br />+37% reach<br />+41 followers</p>
-            </div>
-          </div>
-        </div>
-
         <div class="case-panel">
           <h3 class="section-title">Insights from Data</h3>
           <ul>
@@ -1137,10 +1217,11 @@
       </div>
     </section>
 
-    <section id="about" class="section two-col section-tone-soft">
+    <section id="about" class="section two-col section-personal">
       <div>
+        <span class="section-kicker">Profile Overview</span>
         <h2>About</h2>
-        <p class="section-intro">A concise introduction to my professional profile, strengths, and working style.</p>
+        <p class="section-intro">From here onward, the focus shifts from project work to my profile, strengths, and the skills I bring to marketing and digital business roles.</p>
       </div>
       <div class="content">
         <p>
