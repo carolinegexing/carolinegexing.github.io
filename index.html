@@ -6,13 +6,20 @@
   <title>Xing Ge | Profile</title>
   <style>
     :root {
-      --bg: #f7f7f5;
-      --surface: #ffffff;
-      --text: #181818;
-      --muted: #6b6b6b;
-      --line: #e7e7e2;
-      --accent: #1f1f1f;
-      --max: 1080px;
+      --bg: #ece2d4;
+      --surface: #f7f1e8;
+      --surface-soft: #f1e8dc;
+      --surface-alt: #ede1d2;
+      --surface-strong: #e5d7c5;
+      --card: rgba(255, 252, 247, 0.72);
+      --text: #2b2118;
+      --muted: #746555;
+      --line: rgba(118, 95, 73, 0.18);
+      --accent: #5a4330;
+      --shadow: 0 18px 40px rgba(89, 67, 48, 0.08);
+      --heading-font: Aptos, "Aptos Display", "Aptos Narrow", "Segoe UI Variable", "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+      --body-font: Aptos, "Aptos Display", "Aptos Narrow", "Segoe UI Variable", "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+      --max: 1200px;
     }
 
     * {
@@ -25,8 +32,9 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
+      font-family: var(--body-font);
+      background:
+        radial-gradient(circle at top, #faf5ed 0%, #f2e8db 34%, #ece2d4 68%, #e6dac9 100%);
       color: var(--text);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -39,7 +47,7 @@
     }
 
     .container {
-      width: min(calc(100% - 48px), var(--max));
+      width: min(calc(100% - 40px), var(--max));
       margin: 0 auto;
     }
 
@@ -47,8 +55,8 @@
       position: sticky;
       top: 0;
       backdrop-filter: blur(12px);
-      background: rgba(247, 247, 245, 0.82);
-      border-bottom: 1px solid rgba(231, 231, 226, 0.85);
+      background: rgba(250, 244, 236, 0.84);
+      border-bottom: 1px solid rgba(118, 95, 73, 0.12);
       z-index: 10;
     }
 
@@ -64,32 +72,46 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 600;
+      color: var(--accent);
     }
 
     .nav {
       display: flex;
       gap: 24px;
       font-size: 0.95rem;
-      color: var(--muted);
+      color: #5f4e3e;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .nav a {
+      transition: color 0.18s ease;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
     }
 
     .shortcut {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-top: 24px;
+      margin-top: 28px;
       padding: 11px 16px;
       border: 1px solid var(--line);
-      background: var(--surface);
+      border-radius: 999px;
+      background: rgba(255, 250, 244, 0.9);
       font-size: 0.92rem;
       font-weight: 600;
-      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      color: var(--accent);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
     }
 
     .shortcut:hover {
       transform: translateY(-1px);
-      border-color: #cfcfc8;
-      background: #fbfbfa;
+      border-color: rgba(90, 67, 48, 0.24);
+      background: #fffaf4;
+      box-shadow: 0 10px 24px rgba(89, 67, 48, 0.08);
     }
 
     .shortcut-group {
@@ -100,11 +122,55 @@
     }
 
     .hero {
-      padding: 92px 0 64px;
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 48px;
-      align-items: end;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: clamp(32px, 5vw, 60px);
+      align-items: center;
+      padding: clamp(44px, 6vw, 80px);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      background: linear-gradient(145deg, rgba(250, 245, 237, 0.96) 0%, rgba(243, 234, 222, 0.94) 100%);
+    }
+
+    .hero-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .hero-photo {
+      width: 140px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255, 249, 240, 0.95);
+      box-shadow: 0 16px 36px rgba(89, 67, 48, 0.14);
+      margin-bottom: 28px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255, 250, 244, 0.96), rgba(226, 209, 191, 0.94));
+      position: relative;
+      align-self: center;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-photo.is-fallback::after {
+      content: "XG";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #8c715b;
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      letter-spacing: 0.06em;
     }
 
     .eyebrow {
@@ -113,7 +179,7 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     h1 {
@@ -122,19 +188,30 @@
       line-height: 0.98;
       letter-spacing: -0.04em;
       font-weight: 700;
+      font-family: var(--heading-font);
     }
 
     .hero p.lead {
       font-size: 1.12rem;
       color: var(--muted);
-      max-width: 720px;
+      max-width: 700px;
       margin: 24px 0 0;
     }
 
+    .legal-note {
+      margin: 14px 0 0;
+      max-width: 680px;
+      font-size: 0.95rem;
+      color: #8a7968;
+      font-weight: 500;
+    }
+
     .hero-card {
-      background: var(--surface);
+      background: rgba(255, 251, 246, 0.6);
       border: 1px solid var(--line);
-      padding: 28px;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
     }
 
     .hero-card h2,
@@ -144,6 +221,7 @@
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      color: var(--accent);
     }
 
     .meta-list {
@@ -176,24 +254,57 @@
     }
 
     main {
-      padding-bottom: 80px;
+      padding: 28px 0 88px;
+      display: grid;
+      gap: 18px;
     }
 
     .section {
-      padding: 34px 0;
-      border-top: 1px solid var(--line);
+      padding: clamp(32px, 4vw, 44px);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--section-bg, var(--surface));
+      box-shadow: var(--shadow);
+    }
+
+    .section-tone-light {
+      --section-bg: linear-gradient(180deg, rgba(249, 244, 236, 0.96) 0%, rgba(244, 236, 226, 0.96) 100%);
+    }
+
+    .section-tone-soft {
+      --section-bg: linear-gradient(180deg, rgba(243, 235, 223, 0.97) 0%, rgba(239, 229, 214, 0.97) 100%);
+    }
+
+    .section-tone-sand {
+      --section-bg: linear-gradient(180deg, rgba(238, 227, 212, 0.97) 0%, rgba(234, 220, 203, 0.97) 100%);
+    }
+
+    .section-tone-strong {
+      --section-bg: linear-gradient(180deg, rgba(231, 218, 201, 0.97) 0%, rgba(226, 210, 190, 0.97) 100%);
     }
 
     .two-col {
       display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 40px;
+      grid-template-columns: minmax(190px, 0.4fr) minmax(0, 1fr);
+      gap: clamp(28px, 4vw, 48px);
+      align-items: start;
     }
 
     .section-intro {
       color: var(--muted);
       font-size: 0.98rem;
-      max-width: 260px;
+      max-width: 320px;
+      margin: 0;
+    }
+
+    .section-header {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .section-header-wide .section-intro {
+      max-width: 720px;
     }
 
     .content p {
@@ -209,15 +320,16 @@
 
     .case-study {
       display: grid;
-      gap: 28px;
+      gap: 22px;
     }
 
     .case-study-header {
       display: grid;
       gap: 18px;
-      padding: 30px;
+      padding: clamp(28px, 4vw, 36px);
       border: 1px solid var(--line);
-      background: linear-gradient(135deg, #f3f1eb 0%, #ffffff 100%);
+      border-radius: 24px;
+      background: linear-gradient(140deg, rgba(251, 247, 241, 0.9) 0%, rgba(240, 228, 214, 0.95) 100%);
     }
 
     .case-study-header h3 {
@@ -225,6 +337,7 @@
       font-size: clamp(2.1rem, 4vw, 3.6rem);
       line-height: 0.98;
       letter-spacing: -0.05em;
+      font-family: var(--heading-font);
     }
 
     .case-subtitle {
@@ -252,8 +365,9 @@
     .subsection,
     .results-cards .card,
     .case-final {
-      background: var(--surface);
+      background: rgba(255, 251, 246, 0.72);
       border: 1px solid var(--line);
+      border-radius: 22px;
     }
 
     .case-meta span {
@@ -305,6 +419,7 @@
       margin: 0 0 14px;
       font-size: 1.3rem;
       letter-spacing: -0.02em;
+      font-family: var(--heading-font);
     }
 
     .case-panel p,
@@ -348,9 +463,9 @@
     }
 
     .case-image-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 14px;
+      background: rgba(255, 251, 246, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 18px;
       overflow: hidden;
       margin-top: 20px;
     }
@@ -360,7 +475,7 @@
       height: 100%;
       display: block;
       object-fit: contain;
-      background: #f5f5f5;
+      background: #efe7dc;
     }
 
     .case-image-caption {
@@ -371,13 +486,14 @@
       margin: 0 0 8px 0;
       font-size: 16px;
       font-weight: 600;
-      color: #111;
+      color: var(--text);
+      font-family: var(--heading-font);
     }
 
     .case-image-caption p {
       margin: 0;
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
     }
 
     .case-two-column {
@@ -390,19 +506,19 @@
     .case-image-frame-landscape {
       aspect-ratio: 16 / 10;
       overflow: hidden;
-      background: #f5f5f5;
+      background: #efe7dc;
     }
 
     .case-image-frame-portrait {
       aspect-ratio: 4 / 5;
       overflow: hidden;
-      background: #f5f5f5;
+      background: #efe7dc;
     }
 
     .case-image-frame-wide {
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      background: #f5f5f5;
+      background: #efe7dc;
     }
 
     .visual-block {
@@ -417,9 +533,9 @@
     }
 
     .visual-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 14px;
+      background: rgba(255, 251, 246, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 18px;
       overflow: hidden;
     }
 
@@ -427,7 +543,7 @@
       width: 100%;
       display: block;
       object-fit: cover;
-      background: #f3f3f3;
+      background: #efe7dc;
     }
 
     .visual-card-content {
@@ -438,12 +554,13 @@
       margin: 0 0 8px 0;
       font-size: 16px;
       font-weight: 600;
+      font-family: var(--heading-font);
     }
 
     .visual-card p {
       margin: 0;
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
     }
 
     .span-6 {
@@ -481,23 +598,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #888;
+      color: #8c7a67;
       font-size: 14px;
-      background: linear-gradient(135deg, #f7f7f7, #efefef);
+      background: linear-gradient(135deg, #f5ecdf, #eadcc9);
     }
 
     .journey-wrapper {
       margin-top: 24px;
       padding: 28px;
-      background: #fff;
-      border: 1px solid #eee;
+      background: rgba(255, 251, 246, 0.86);
+      border: 1px solid var(--line);
       border-radius: 16px;
     }
 
     .journey-title {
       margin-bottom: 20px;
       font-size: 15px;
-      color: #666;
+      color: var(--muted);
     }
 
     .journey-flow {
@@ -509,23 +626,23 @@
 
     .journey-step {
       padding: 14px 18px;
-      background: #fafafa;
-      border: 1px solid #e9e9e9;
+      background: rgba(249, 243, 235, 0.9);
+      border: 1px solid var(--line);
       border-radius: 999px;
       font-size: 14px;
-      color: #222;
+      color: var(--text);
       white-space: nowrap;
     }
 
     .journey-arrow {
       font-size: 18px;
-      color: #999;
+      color: #9a866f;
     }
 
     .journey-note {
       margin-top: 16px;
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
     }
 
     .section-label {
@@ -534,12 +651,13 @@
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #777;
+      color: #8b7661;
     }
 
     .card {
-      background: var(--surface);
+      background: rgba(255, 251, 246, 0.72);
       border: 1px solid var(--line);
+      border-radius: 22px;
       padding: 22px;
       min-height: 180px;
     }
@@ -548,6 +666,7 @@
       margin: 0 0 10px;
       font-size: 1.05rem;
       font-weight: 600;
+      font-family: var(--heading-font);
     }
 
     .card p {
@@ -565,9 +684,10 @@
     .tag {
       padding: 9px 12px;
       border: 1px solid var(--line);
-      background: var(--surface);
+      border-radius: 999px;
+      background: rgba(255, 250, 244, 0.76);
       font-size: 0.92rem;
-      color: #2d2d2d;
+      color: var(--text);
     }
 
     .timeline {
@@ -605,10 +725,16 @@
     }
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 26px 0 42px;
+      padding: 12px 0 42px;
       color: var(--muted);
       font-size: 0.92rem;
+    }
+
+    @media (max-width: 1080px) {
+      .snapshot,
+      .results-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 860px) {
@@ -634,7 +760,7 @@
       }
 
       .hero {
-        padding-top: 64px;
+        padding: 36px 24px;
       }
 
       .section-intro {
@@ -662,6 +788,35 @@
         margin-left: 10px;
       }
     }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 24px), var(--max));
+      }
+
+      .topbar-inner {
+        padding: 14px 0;
+      }
+
+      main {
+        padding-top: 18px;
+      }
+
+      .section {
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+
+      .hero-photo {
+        width: 112px;
+        margin-bottom: 22px;
+      }
+
+      .shortcut {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -679,8 +834,11 @@
   </header>
 
   <main id="top" class="container">
-    <section class="hero">
-      <div>
+    <section class="hero section-tone-light">
+      <div class="hero-intro">
+        <div class="hero-photo is-fallback" aria-label="Profile photo">
+          <img src="images/profile-photo.png" alt="Portrait of Xing Ge" onload="this.parentElement.classList.remove('is-fallback')" onerror="this.remove()" />
+        </div>
         <span class="eyebrow">Online Business & Marketing</span>
         <h1>Xing Ge</h1>
         <p class="lead">
@@ -688,6 +846,7 @@
           premium retail, e-commerce operations, and brand communication. I bring together a strategic marketing mindset,
           strong execution, and a customer-first understanding shaped by both academic research and real business practice.
         </p>
+        <p class="legal-note"><em>As a recent Master’s graduate in Switzerland, I am eligible to work under Art. 21 para. 3 FNIA.</em></p>
         <div class="shortcut-group">
           <a class="shortcut" href="#marketing-campaign">Jump to Marketing Campaign</a>
         </div>
@@ -716,10 +875,10 @@
       </aside>
     </section>
 
-    <section id="marketing-campaign" class="section two-col">
-      <div>
+    <section id="marketing-campaign" class="section section-campaign section-tone-strong">
+      <div class="section-header section-header-wide">
         <h2>Marketing Campaign</h2>
-        <p class="section-intro">A clean case study showing how strategy, content, and digital touchpoints worked together around one boutique brand.</p>
+        <p class="section-intro">Campaigns developed from insight to execution - combining storytelling, customer understanding, and measurable impact.</p>
       </div>
       <div class="case-study">
         <div class="case-study-header">
@@ -978,7 +1137,7 @@
       </div>
     </section>
 
-    <section id="about" class="section two-col">
+    <section id="about" class="section two-col section-tone-soft">
       <div>
         <h2>About</h2>
         <p class="section-intro">A concise introduction to my professional profile, strengths, and working style.</p>
@@ -1000,7 +1159,7 @@
       </div>
     </section>
 
-    <section id="expertise" class="section two-col">
+    <section id="expertise" class="section two-col section-tone-light">
       <div>
         <h2>Expertise</h2>
         <p class="section-intro">Core strengths developed through academic work, digital projects, and customer-facing roles.</p>
@@ -1034,7 +1193,7 @@
       </div>
     </section>
 
-    <section class="section two-col">
+    <section class="section two-col section-tone-sand">
       <div>
         <h2>Tools & Skills</h2>
         <p class="section-intro">Selected tools and working capabilities I use across digital and marketing-related tasks.</p>
@@ -1055,7 +1214,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section two-col">
+    <section id="experience" class="section two-col section-tone-light">
       <div>
         <h2>Experience</h2>
         <p class="section-intro">A snapshot of the environments and roles that have shaped my professional perspective.</p>
@@ -1094,7 +1253,7 @@
       </div>
     </section>
 
-    <section id="education" class="section two-col">
+    <section id="education" class="section two-col section-tone-soft">
       <div>
         <h2>Education</h2>
         <p class="section-intro">Academic foundation with a strong interest in turning theory into practical business value.</p>
@@ -1111,7 +1270,7 @@
       </div>
     </section>
 
-    <section class="section two-col">
+    <section class="section two-col section-tone-sand">
       <div>
         <h2>Working Style</h2>
         <p class="section-intro">How I approach collaboration, communication, and execution in professional settings.</p>
