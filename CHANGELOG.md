@@ -1,0 +1,1 @@
+- 2026-08-28: Removed duplicated copy in the Abito Allora case study (Christmas campaign caption, newsletter block, Role/Scope repetition), fixed Results & Impact heading hierarchy (Email/Website/SEO/Social now h4 under a single h3), and updated the page `<title>`.
