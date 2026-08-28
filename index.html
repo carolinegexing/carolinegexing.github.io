@@ -501,6 +501,47 @@
       font-family: var(--heading-font);
     }
 
+    summary.section-title {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 0;
+      user-select: none;
+    }
+
+    summary.section-title::-webkit-details-marker {
+      display: none;
+    }
+
+    summary.section-title::after {
+      content: "+";
+      flex: 0 0 auto;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 1.1rem;
+      color: var(--accent);
+      transition: transform 0.18s ease;
+    }
+
+    details.case-panel[open] summary.section-title::after {
+      content: "−";
+    }
+
+    details.case-panel .details-body {
+      margin-top: 18px;
+    }
+
+    details.case-panel:not([open]) summary.section-title {
+      margin-bottom: 0;
+    }
+
     .case-panel p,
     .subsection p,
     .case-final p {
@@ -1042,8 +1083,9 @@
           </div>
         </div>
 
-        <div class="case-panel">
-          <h3 class="section-title">My Approach</h3>
+        <details class="case-panel">
+          <summary class="section-title">My Approach</summary>
+          <div class="details-body">
 
           <div class="subsection">
             <h3>1. E-commerce & Website Transformation</h3>
@@ -1185,10 +1227,12 @@
               Focus: using behavioural data to inform decisions rather than assumptions
             </p>
           </div>
-        </div>
+          </div>
+        </details>
 
-        <div class="case-panel">
-          <h3 class="section-title">Insights from Data</h3>
+        <details class="case-panel">
+          <summary class="section-title">Insights from Data</summary>
+          <div class="details-body">
           <ul>
             <li>Email acted as a bridge to social platforms rather than a conversion endpoint</li>
             <li>The website functioned as a validation tool rather than a browsing destination</li>
@@ -1196,27 +1240,32 @@
             <li>Instagram Stories drove the highest engagement at 73.8%</li>
             <li>SEO improved discovery, but CTR optimisation remains an opportunity</li>
           </ul>
-        </div>
+          </div>
+        </details>
 
-        <div class="case-panel case-learnings">
-          <h3 class="section-title">Key Learnings</h3>
+        <details class="case-panel case-learnings">
+          <summary class="section-title">Key Learnings</summary>
+          <div class="details-body">
           <ul>
             <li>Trust is built through clarity, detail, and transparency</li>
             <li>Consistency across touchpoints strengthens engagement</li>
             <li>Customer journeys are non-linear and require repeated exposure</li>
             <li>Small structural improvements can significantly impact user experience</li>
           </ul>
-        </div>
+          </div>
+        </details>
 
-        <div class="case-panel case-next">
-          <h3 class="section-title">What I Would Do Next</h3>
+        <details class="case-panel case-next">
+          <summary class="section-title">What I Would Do Next</summary>
+          <div class="details-body">
           <ul>
             <li>Strengthen cross-channel tracking and attribution</li>
             <li>Develop repeatable content frameworks</li>
             <li>Expand SEO strategy for non-brand keywords</li>
             <li>Enhance trust signals with reviews and authentication storytelling</li>
           </ul>
-        </div>
+          </div>
+        </details>
 
         <div class="case-final">
           <p class="footer-note">
